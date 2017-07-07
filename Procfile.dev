@@ -1,0 +1,14 @@
+# Basic procfile for dev work.
+# Runs all processes. Development is faster if you pick one of the other Procfiles if you don't need
+# some of the processes: Procfile.rails or Procfile.express
+
+
+express-api: sh -c 'npm run api'
+
+react-webpack: sh -c 'npm run start'
+
+# log: tail -f log/development.log
+
+# redis-server: redis-server
+
+# guard: bundle exec guard -i
