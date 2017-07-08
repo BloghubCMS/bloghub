@@ -19,7 +19,8 @@ export default [
       Object.keys(postsDir).forEach((k) => {
         post_list.push({
           id: postsDir[k].hash,
-          text: 'example 1',
+        // #TODO: somehow get a text excerpt from
+          text: 'stub',
           title: k,
         });
       });
