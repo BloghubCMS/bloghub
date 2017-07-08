@@ -1,5 +1,10 @@
-const gitLoadDir = () => {
-
+const gitLoadDir = function* (repo) {
+      // We first read the commit.
+      var headHash = yield repo.readRef("refs/heads/master");
+      var commit = yield repo.loadAs("commit", headHash);
+      // We then read the tree using `commit.tree`.
+      var tree = yield repo.loadAs("tree", commit.tree);
+      return tree;
 };
 
 const gitConnect = () => {
@@ -13,7 +18,7 @@ const gitConnect = () => {
 
     // Your user can generate these manually at https://github.com/settings/tokens/new
     // Or you can use an oauth flow to get a token for the user.
-    var githubToken = "1104c340eeff28df91e722c0b3a2e2f9e23d380a";
+    var githubToken = "81f249a7e76a14f66ab50cc85c170aaa803a2356";
 
     // Mixin the main library using github to provide the following:
     // - repo.loadAs(type, hash) => value
