@@ -1,14 +1,14 @@
 module.exports = [ 
   {
-    "title": "mustafa's shitty site",
+    "title": "mustafa's very nice site",
     "address": "https://whitehouse.gov"
   },
   {
-    "title": "mustafa's crappy site",
+    "title": "mustafa's awesome site",
     "address": "https://google.com"
   },
   {
-    "title": "mustafa's mediocre site",
+    "title": "mustafa's pretty good site",
     "address": "https://www.onion.com"
   }
 ];

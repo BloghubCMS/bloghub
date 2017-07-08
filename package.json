@@ -131,6 +131,7 @@
   "dependencies": {
     "babel-preset-react-hmre": "^1.1.1",
     "gen-run": "^0.1.2",
+    "immutable": "^3.8.1",
     "js-git": "^0.7.8",
     "js-github": "^1.0.0",
     "material-ui": "^0.18.5",
@@ -138,6 +139,7 @@
     "mui-theme-default": "^0.1.7",
     "nodemon": "^1.11.0",
     "normalize.css": "^7.0.0",
+    "npm": "^5.1.0",
     "react": "^15.3.0",
     "react-fontawesome": "^1.6.1",
     "react-mde": "^0.9.5",
