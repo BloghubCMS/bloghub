@@ -130,6 +130,7 @@
   },
   "dependencies": {
     "babel-preset-react-hmre": "^1.1.1",
+    "colors": "^1.1.2",
     "gen-run": "^0.1.2",
     "immutable": "^3.8.1",
     "js-git": "^0.7.8",
@@ -139,13 +140,15 @@
     "mui-theme-default": "^0.1.7",
     "nodemon": "^1.11.0",
     "normalize.css": "^7.0.0",
-    "npm": "^5.1.0",
+    "pg": "^6.4.0",
+    "pg-hstore": "^2.3.2",
     "react": "^15.3.0",
     "react-fontawesome": "^1.6.1",
     "react-mde": "^0.9.5",
     "react-redux": "^4.4.5",
     "react-tap-event-plugin": "^1.0.0",
     "redux-batched-subscribe": "0.1.6",
+    "sequelize": "^4.2.1",
     "theme-manager": "0.0.0"
   }
 }
