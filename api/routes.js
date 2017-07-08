@@ -1,7 +1,7 @@
-import Posts from './routes/posts';
-import Post from './routes/post';
-import Sites from './routes/sites';
+import Posts from './controllers/posts';
+import Post from './controllers/post';
+import Sites from './controllers/sites';
 
 export default [
-  Posts, Sites, Post
+  Posts, Sites, Post,
 ];

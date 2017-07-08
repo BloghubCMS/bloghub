@@ -1,6 +1,6 @@
 import Express from 'express';
 import wrap from 'express-async-wrap'; // can use async, await
-import {gitConnect, gitLoadDir} from '../modules/gitConnect.js';
+import {gitConnect, gitLoadDir} from '../modules/gitUtils.js';
 var modes = require('js-git/lib/modes');
 
 const Router = new Express.Router();
