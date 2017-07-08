@@ -8,7 +8,19 @@ import cookieParser from 'cookie-parser';
 import fs from 'fs';
 
 // API routes
-import routes from './routes.js';
+import routes from './config/routes.js';
+
+// Database
+import {db} from './config/database.js';
+
+db
+  .authenticate()
+  .then(() => {
+    console.log('DB Connection has been established successfully.'.magenta);
+  })
+  .catch(err => {
+    console.error('DB Unable to connect to the database:'.red, err);
+  });
 
 const app = new Express();
 const server = new http.Server(app);
