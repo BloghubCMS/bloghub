@@ -30,5 +30,14 @@ server.listen(3030, () => {
   const host = server.address().address;
   const port = server.address().port;
 
-  console.log('Api is listening on http://%s:%s', host, port);
+  console.log(`
+  ____  _             _   _       _     
+ | __ )| | ___   __ _| | | |_   _| |__  
+ |  _ \\| |/ _ \\ / _\` | |_| | | | | '_ \\ 
+ | |_) | | (_) | (_| |  _  | |_| | |_) |
+ |____/|_|\\___/ \\__, |_| |_|\\__,_|_.__/ 
+                |___/ 
+
+`);
+  console.log('Bloghub api is listening on http://%s:%s', host, port);
 });
