@@ -16,20 +16,16 @@ then
 If you don't have foreman installed then
 ```$ yarn global add foreman```
 
-install the sample db to get working quickly. After that you will need to update the records of the site table to have your github oauth token so that the api can connect to github. If you don't do this the server will crash when it tries to connect.
+~~install the sample db to get working quickly.~~ After that you will need to update the records of ~~the site table~~ the gitUtils file for the field - githubToken, to have your github oauth token. That way the api can connect to github. If you don't do this the server will crash when it tries to connect.
 
-you could do that with a command like this in PSQL:
-``` ```
+~~you could do that with a command like this in PSQL:~~
+~~``` ```~~
+
 
 then start the server like this
 
 ```$ foreman start -f Procfile.dev```
 
-sometimes on a new computer for some reason the first time you start the server it crashes saying
-
-```WebpackOptionsValidationError: Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.```
-
-I haven't had time to figure out whats causing that yet, but you should be able to just restart the server and the second time it should start fine.
 
 ## Run tests
 
