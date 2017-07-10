@@ -14,13 +14,13 @@ class Listing extends React.Component {
   //   this.props.clickGoTo(this);
   // }
 
-  handleClickDelete(listing) {
+  handleClickDelete() {
     console.log('inhandle click', this);
-    this.props.deleteSite(listing);
+    this.props.deleteSite(this);
   }
   
   render() {
-    console.log('in listing render ', this.props)
+    // console.log('in listing render ', this.props)
     return (
       // <div className = "listing" onClick = { this.handleClickGoTo } >
       <div className = "listing">
@@ -42,6 +42,7 @@ class Listing extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   deleteSite: (listing) => {
+    console.log('mapDispatchtoProps ', listing)
     dispatch(sitesActions.deleteSite(listing));
   }
 });
