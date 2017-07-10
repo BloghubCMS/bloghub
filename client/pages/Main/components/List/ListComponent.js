@@ -36,15 +36,12 @@ class List extends React.Component {
   //   store.dispatch(updateSites(sites));
   // }
   render() {
-    console.log('rendering', this.props.sites.sites)
     let listingsArr = [];
     if (this.props.sites.sites.length) { 
-    console.log('inside if', this.props.sites)
     listingsArr = this.props.sites.sites.map( (site, i) => {
       return <Listing key={i} id={i} title={site.title} address={site.address} />
      });
     }
-    console.log('listings arr ', listingsArr)
     return (
       <div className="listing">
         { listingsArr }
@@ -59,7 +56,6 @@ class List extends React.Component {
 //   sites: React.PropTypes.object
 // }
 const mapStateToProps = (state) => {
-  // console.log('this is state ', state);
   return {
     sites: state.sites
   }
@@ -69,7 +65,6 @@ const mapDispatchToProps = (dispatch) => ({
   initializeSites: () => {
     dispatch(sitesActions.populateSites(dummy));
   }
-  // return bindActionCreators(sitesActions, dispatch);
 });
 
 const ConnectedList = connect(mapStateToProps, mapDispatchToProps)(List);

@@ -18,10 +18,11 @@ const sites = (state = initialState, action) => {
       console.log('in delete site reducer', action.site)
       let newDummy = state.sites.map( (site, i) => {
         console.log('in new dummy', site)
-        console.log('actio.site', action)
-        if (site !== action.site) return site;
+        console.log('actio.site', action.site.props.id)
+        if (i !== action.site.props.id) return site;
       });
-
+      newDummy = newDummy.filter(Boolean);
+      console.log('new dummy', newDummy)
       return Object.assign({}, state, {
         sites: newDummy
       });
