@@ -3,7 +3,7 @@ var colors = require('colors');
 
 export const db = new Sequelize('postgresql-orm', 'student', 'ilovetesting', {
   host: 'localhost',
-  dialect: 'postgres'
+  dialect: 'postgres',
 });
 
 // Set references to all the models here:

@@ -10,16 +10,55 @@ export default [
     console.log(req.query.testParam); // example
     console.log('GET FROM api/sites'); // example
 
-    Site.findAll().then(sites => {
-      res.json({
-        sites: sites
-      });
+    // Site.findAll().then(sites => {
+    //   res.json({
+    //     sites: sites
+    //   });
+    // });
+
+
+/**
+ * TODO: Remove this temporary response.
+ */
+    res.json({
+      sites: [
+        {
+          id: '1',
+          siteName: 'codingbros.br4incandy.com',
+          url: 'blog.com.something',
+          authToken: '<your auth token>',
+          githubLocation: 'BloghubCMS/jekyll-sandbox-demo',
+        },
+        {
+          id: '2',
+          siteName: 'iamgrumpy.com',
+          url: 'blog.com.something',
+          githubLocation: 'BloghubCMS/jekyll-sandbox-demo',
+          authToken: '<your auth token>',
+        },
+        {
+          id: '3',
+          siteName: 'blog.yahoo.com',
+          url: 'blog.com.something',
+          githubLocation: 'BloghubCMS/jekyll-sandbox-demo',
+          authToken: '<your auth token>',
+        },
+        {
+          id: '4',
+          siteName: 'weeklyrambling.com',
+          url: 'blog.com.something',
+          githubLocation: 'BloghubCMS/jekyll-sandbox-demo',
+          authToken: '<your auth token>',
+        },
+      ],
     });
 
   })),
 
   Router.post('/api/sites', wrap(async function(req, res) {
     console.log('POST TO api/sites'); // example
+
+    console.log(req.body);
 
     // force: true will drop the table if it already exists
     Site.sync({force: true}).then(() => {
@@ -28,6 +67,7 @@ export default [
         siteName: 'blogSiteName',
              url: 'blog.com.something',
        authToken: '81f249a7e76a14f66ab50cc85c170aaa803a2356',
+  githubLocation: 'BloghubCMS/jekyll-sandbox-demo',
       });
     });
 

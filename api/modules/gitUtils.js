@@ -12,9 +12,14 @@ const gitConnect = () => {
 // Start out the normal way with a plain object.
     var repo = {};
 
+
+/**
+ * TODO: Move the following static links into the database.
+ */
+
     // This only works for normal repos.  Github doesn't allow access to gists as
     // far as I can tell.
-    var githubName = "chrisdobler/codingbros";
+    var githubName = "BloghubCMS/jekyll-sandbox-demo";
 
     // Your user can generate these manually at https://github.com/settings/tokens/new
     // Or you can use an oauth flow to get a token for the user.
