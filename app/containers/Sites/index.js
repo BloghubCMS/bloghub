@@ -56,7 +56,7 @@ export class Sites extends Component {
 
   render() {
     const { items } = this.props;
-
+console.log('items', items);
     return (
       <section className={s.root}>
         <Helmet
@@ -87,7 +87,7 @@ export class Sites extends Component {
           { // Render posts
             items && items.map((site, i) =>
               <TableRow className={s.item} key={site.id} selected={this.isSelected(i)}>
-                <TableRowColumn>{site.title}</TableRowColumn>
+                <TableRowColumn>{site.siteName}</TableRowColumn>
                 <TableRowColumn>{site.id}</TableRowColumn>
               </TableRow>
             )
