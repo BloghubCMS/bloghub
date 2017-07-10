@@ -11,4 +11,7 @@ export const Site = db.define('site', {
   authToken: {
     type: Sequelize.STRING,
   },
+  // githubLocation: {
+    // type: Sequelize.STRING,
+  // }
 });
