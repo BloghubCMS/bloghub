@@ -4,6 +4,7 @@ const development = require('./dev.config.js');
 const production = require('./prod.config.js');
 const developmentSSR = require('./dev.ssr.config.js');
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 const TARGET = process.env.npm_lifecycle_event;
 process.env.BABEL_ENV = TARGET;
@@ -32,8 +33,8 @@ const common = {
   },
 
   resolve: {
-    extensions: ['', '.jsx', '.js', '.json', '.css'],
-    modulesDirectories: ['node_modules'],
+    extensions: ['.jsx', '.js', '.json', '.css'],
+    // modulesDirectories: ['node_modules'],
     // Webpack alias for beautiful import
     alias: {
       components: path.join(__dirname, '../app/components/'),
@@ -67,7 +68,7 @@ const common = {
     }, {
       // Loader for fonts (eot)
       test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'file',
+      loader: 'file-loader',
     }, {
       // Loader for images (svg)
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -112,27 +113,23 @@ const common = {
       minChunks: 2,
       name: 'vendor',
     }),
-  ],
-
-  postcss: () => [
-    require('postcss-partial-import'),
-    require('postcss-nested'),
-    require('postcss-short'),
-    require('autoprefixer')({
-      browsers: ['> 5%'],
-      remove: false,
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        postcss: [
+          autoprefixer,
+        ],
+      },
     }),
   ],
 };
 
 if (process.env.NODE_ENV === 'development' && !global.ssr) {
   module.exports = merge(development, common);
-}
-
-if (process.env.NODE_ENV === 'development' && global.ssr) {
+} else if (process.env.NODE_ENV === 'development' && global.ssr) {
   module.exports = merge(developmentSSR, common);
-}
-
-if (process.env.NODE_ENV === 'production') {
+} else if (process.env.NODE_ENV === 'production') {
   module.exports = merge(production, common);
+} else {
+  module.exports = merge(development, common);
 }
